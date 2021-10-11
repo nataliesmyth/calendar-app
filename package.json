@@ -2,13 +2,15 @@
   "name": "monthly-calendar",
   "version": "1.0.0",
   "description": "calendar application",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Natalie Smyth",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.10.7"
+    "dayjs": "^1.10.7",
+    "nodemon": "^2.0.13",
+    "parcel": "^2.0.0-rc.0"
   }
 }
