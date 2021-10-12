@@ -4,7 +4,7 @@
 const date = new Date();
 const month = date.getMonth();
 const monthDays = document.querySelector('.days')
-const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+const lastDay = new Date(date.getFullYear(), date.getMonth() + 1)
 
 console.log(lastDay);
 
