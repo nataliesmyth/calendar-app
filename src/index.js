@@ -2,11 +2,15 @@
 // import "./style.css";
 
 const date = new Date();
+date.setMonth(6);
+
 const month = date.getMonth();
 const monthDays = document.querySelector('.days')
-const lastDay = new Date(date.getFullYear(), date.getMonth() + 1)
+const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+
 
 console.log(lastDay);
+
 
 const months = [
   'January',
@@ -24,12 +28,11 @@ const months = [
 ];
 
 document.querySelector('.date h1').innerHTML = months[date.getMonth()];
-
 document.querySelector('.date p').innerHTML = date.toDateString();
 
 let days = '';
 
-for  (let i = 1; i <= 31; i++) {
+for(let i = 1; i <= lastDay; i++) {
   days += `<div>${i}</div>`
-  monthDays.innerHTML = days;
-}
+};
+monthDays.innerHTML = days;
