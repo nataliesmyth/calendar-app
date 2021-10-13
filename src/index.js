@@ -6,15 +6,29 @@ const date = new Date();
 
 const renderCalendar = () => {
 
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
 
-date.setDate(1);
-console.log(date.getDay());
+// date.setDate(1);
+// console.log(date.getDay());
 
 const month = date.getMonth();
 const monthDays = document.querySelector('.days')
 const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
-console.log(prevLastDay)
+// console.log(prevLastDay)
 const firstDayIndex = date.getDay();
 
 const lastDayIndex = new Date(
@@ -24,23 +38,9 @@ const lastDayIndex = new Date(
 ).getDay();
 
 const nextDays = 7 - lastDayIndex - 1;
+const selectYear = document.getElementById('year')
+const selectMonth = document.getElementById('month')
 
-console.log(nextDays)
-
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
 
 document.querySelector('.date h1').innerHTML = months[date.getMonth()];
 document.querySelector('.date p').innerHTML = date.toDateString();
@@ -65,6 +65,14 @@ for (let j = 1; j <= nextDays; j++) {
 monthDays.innerHTML = days;
 
 }
+
+function jump() {
+  currentYear = parseInt(selectYear.value);
+  currentMonth = parseInt(selectMonth.value);
+  showCalendar(currentMonth, currentYear);
+}
+
+// Event Listeners
 
 document.querySelector('.prev').addEventListener('click', () => {
   date.setMonth(date.getMonth() - 1);
