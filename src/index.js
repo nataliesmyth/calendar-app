@@ -7,7 +7,7 @@ const date = new Date();
 const renderCalendar = () => {
 
 
-date.setDate(1);
+// date.setDate(1);
 console.log(date.getDay());
 
 const month = date.getMonth();
@@ -26,7 +26,6 @@ const lastDayIndex = new Date(
 const nextDays = 7 - lastDayIndex - 1;
 
 console.log(nextDays)
-
 const months = [
   'January',
   'February',
@@ -41,6 +40,7 @@ const months = [
   'November',
   'December',
 ];
+
 
 document.querySelector('.date h1').innerHTML = months[date.getMonth()];
 document.querySelector('.date p').innerHTML = date.toDateString();
